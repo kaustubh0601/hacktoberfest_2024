@@ -1,0 +1,22 @@
+class Solution {
+public:
+    char kthCharacter(int k) {
+        
+        string word = "a";
+        
+        while(word.size() < k){
+            
+            string next_word= "";   
+            
+            for( char changeChar : word){
+                char next_char = ( changeChar == 'z') ? 'a' : changeChar + 1;
+                next_word += next_char;
+            }
+            
+            word += next_word;
+    
+        }
+     
+        return word[k-1];
+    }
+};
